@@ -2,7 +2,7 @@
   <div class="collection-container">
     <div class="column is-12">
       <div class="column is-12">
-        <div class="hero is-small is-dark">
+        <div class="hero is-small">
           <div class="hero-body has-text-centered">
             <h2 class="title">Our {{collection.name}} Collection</h2>
             <div v-if="direct_link">
@@ -60,7 +60,6 @@ export default {
 <style scoped>
 
 .collection-container{
-  background-color: bisque;
 }
 
 </style>

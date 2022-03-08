@@ -1,34 +1,56 @@
 <template>
   <div class="columns is-multiline">
-    <div class="column is-3">
+    <div class="column is-12 is-centered">
+      <div class="hero is-small ">
+        <div class="hero-body">
+          <div class="title">
+            <h1>Our Products</h1>
+          </div>
+          <div class="subtitle my-3">
+            <router-link class="button is-link  my-2"
+                         :to="{name: 'collection.show_all'}">
+              View all Products
+            </router-link>
+            <a class="button is-dark mx-3 my-2">More From this Collection</a>
+            <a class="button is-info  my-2">View Other Collections</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="columns is-multiline">
+    <div class="column is-3 mx-6">
       <h1 class="title">{{product.name}}</h1>
       <p>{{product.description}}</p>
     </div>
-    <div class="column is-3 has-background-black">
-      <div class="gallery">
-          <figure class="gallery__item gallery__item--1"  v-for="pictures in product_photos" >
-            <img @mouseover="this.setMainPic(pictures.get_image_url)"
-                 @click="this.setMainPic(pictures.get_image_url)"
-                 v-bind:src="pictures.get_image_url">
+    <div class="column is-8">
+      <div class="columns">
+        <div class="column is-4">
+          <div class="gallery">
+            <figure class="gallery__item gallery__item--1"  v-for="pictures in product_photos" >
+              <img @mouseover="this.setMainPic(pictures.get_image_url)"
+                   @click="this.setMainPic(pictures.get_image_url)"
+                   v-bind:src="pictures.get_image_url">
+            </figure>
+          </div>
+        </div>
+        <div class="column is-6">
+          <figure class="image">
+            <img v-bind:src="this.picture_url">
           </figure>
+        </div>
       </div>
-    </div>
-    <div class="column is-4 has-background-black">
-        <figure class="image">
-          <img v-bind:src="this.picture_url">
-        </figure>
+      <div class="column">
+        <h1 class="title">
+          Price tings
+        </h1>
+        <p class="is-info">
+          Price: <span class="is-bold">${{product.price}}</span>
+        </p>
+        <a class="button is-success">Interested In Buying?</a>
+      </div>
     </div>
   </div>
-
-  <section>
-    <div class="columns is-multiline is-centered">
-      <div class="column is-half">
-        <h1 class="title">
-          This be the Price Area
-        </h1>
-      </div>
-    </div>
-  </section>
 </template>
 
 <script>

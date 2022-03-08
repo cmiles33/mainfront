@@ -1,6 +1,6 @@
 <template>
   <div class="collection">
-    <section class=" hero is-small is-dark mb-6">
+    <section class=" hero is-small mb-6">
       <div class="hero-body has-text-centered">
         <p class="title"> The {{collection.name}} Collection</p>
       </div>

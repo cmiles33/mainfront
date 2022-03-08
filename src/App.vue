@@ -13,13 +13,6 @@
 
       <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
         <div class="navbar-end">
-          <div class="navbar-item ">Collections: </div>
-          <router-link class="navbar-item" :to="{name: 'collection.show_all'}">View All</router-link>
-          <router-link class="navbar-item" v-for="collection in collections"
-                       :key="collection.id"
-                       :to="{name: 'collection.show', params:{id: collection.id, slug: collection.slug}}">
-            {{collection.name}}
-          </router-link>
           <div class="navbar-item">
             <div class="buttons">
               <router-link to="/log-in" class="button is-light">Log In</router-link>

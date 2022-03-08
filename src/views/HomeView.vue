@@ -13,9 +13,14 @@
 
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h2 class="is-size-2 has-text-centered">Latest Collections</h2>
+        <div class="hero is-small">
+          <div class="hero-body hero-buttons">
+            <a class="button is-info is-medium is-fullwidth">View All Products</a>
+            <a class="button is-link is-medium is-fullwidth">View All Collection</a>
+          </div>
+        </div>
       </div>
-      <TheCollection v-for="collection in collections"
+      <TheCollection direct_link v-for="collection in collections"
                      :key="collection.id"
                      :collection="collection"/>
 
