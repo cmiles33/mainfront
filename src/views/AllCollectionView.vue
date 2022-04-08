@@ -1,8 +1,8 @@
 <template>
   <div class="all-collections">
-    <section class=" hero is-small is-dark mb-6">
+    <section class="hero is-small  mb-6">
       <div class="hero-body has-text-centered">
-        <p class="title">View All Collections</p>
+        <p class="title">Our Collections</p>
       </div>
     </section>
     <div class="columns is-multiline">

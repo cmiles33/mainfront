@@ -1,27 +1,31 @@
 <template>
-  <div class="columns is-multiline">
+  <div class="columns columns-border is-multiline">
     <div class="column is-12 is-centered">
       <div class="hero is-small ">
         <div class="hero-body">
           <div class="title">
             <h1>Our Products</h1>
           </div>
-          <div class="subtitle my-3">
-            <router-link class="button is-link  my-2"
-                         :to="{name: 'collection.show_all'}">
+          <div class="subtitle top-box">
+            <router-link class="button display-button my-2"
+                         :to="{name: 'products.show_all'}">
               View all Products
             </router-link>
-            <a class="button is-dark mx-3 my-2">More From this Collection</a>
-            <a class="button is-info  my-2">View Other Collections</a>
+            <a class="button display-button my-2">More From this Collection</a>
+            <router-link class="button display-button my-2"
+                         :to="{name: 'collection.show_all'}">
+              View Other Collections
+            </router-link>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="columns is-multiline">
+  <div class="columns columns-border is-multiline">
     <div class="column is-3 mx-6">
       <h1 class="title">{{product.name}}</h1>
-      <p>{{product.description}}</p>
+      <p class="subtitle is-5">{{product.description}}</p>
+
     </div>
     <div class="column is-8">
       <div class="columns">
@@ -42,12 +46,14 @@
       </div>
       <div class="column">
         <h1 class="title">
-          Price tings
+          Interested In This Piece?
         </h1>
-        <p class="is-info">
-          Price: <span class="is-bold">${{product.price}}</span>
+        <p class="subtitle">
+          Price: <span class="is-bold">(Contact Us)</span>
         </p>
-        <a class="button is-success">Interested In Buying?</a>
+        <a class="button display-button">
+          Send Us An Email
+        </a>
       </div>
     </div>
   </div>
@@ -70,6 +76,7 @@ export default {
   mounted(){
       this.getProducts()
       this.setMainPic(this.product.get_image_url)
+
       //this.getProductPictures()
   },
   methods: {
@@ -98,7 +105,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+
+$display-color-main: #333;
+$display-color-invert: white;
+
 #preview{
 
 }
@@ -121,7 +133,37 @@ figure{
 }
 .gallery__item:hover{
   transform: scale(1.05);
+  border: orange solid 2px;
 }
+.columns{
+  padding: 2px;
+}
+.columns-border{
+  border: black solid 2px;
+  padding: 10px;
+}
+
+.display-button{
+  flex: 1;
+
+  background-color: $display-color-main;
+  color: $display-color-invert;
+  border: 1px solid;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+.display-button:hover,
+.display-button:focus{
+  background-color: $display-color-invert;
+  color: $display-color-main;
+}
+
+.nextdisplayphoto{
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
 
 
 </style>

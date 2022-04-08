@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ProductView from "@/views/ProductView";
 import CollectionView from "@/views/CollectionView";
 import AllCollectionView from "@/views/AllCollectionView";
-
+import AllProductsView from "@/views/AllProductsView";
 const routes = [
   {
     path: '/',
@@ -17,6 +17,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  },
+  {
+    path: '/products',
+    name: 'products.show_all',
+    component: AllProductsView,
   },
   {
     path: '/view-product/:id/:slug',

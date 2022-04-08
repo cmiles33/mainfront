@@ -3,14 +3,21 @@
     <div class="column is-12">
       <div class="column is-12">
         <div class="hero is-small">
-          <div class="hero-body has-text-centered">
-            <h2 class="title">Our {{collection.name}} Collection</h2>
-            <div v-if="direct_link">
-              <router-link
-                  class="button is-primary"
-                  :to="{name: 'collection.show', params:{id: collection.id, slug: collection.slug}}">
-                View The Full Collection
-              </router-link>
+          <div class="columns">
+            <div class="column is-6">
+              <div class="hero-body">
+                <h1 class="title">
+                  Our {{collection.name}} Collection
+                </h1>
+                <div class="subtitle my-2 ">
+                  <router-link class="button display-button"
+                               :to="{name: 'collection.show', params: {id: collection.id, slug: collection.slug} }">
+                    View The Full Collection
+                  </router-link>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
             </div>
           </div>
         </div>
@@ -57,9 +64,31 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+$display-color-main: #333;
+$display-color-invert: white;
+
 
 .collection-container{
+  border: black solid 2px;
 }
+
+.display-button{
+  flex: 1;
+
+  background-color: $display-color-main;
+  color: $display-color-invert;
+  border: 1px solid;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+.display-button:hover,
+.display-button:focus{
+  background-color: $display-color-invert;
+  color: $display-color-main;
+}
+
 
 </style>

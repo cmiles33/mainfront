@@ -1,36 +1,13 @@
 <template>
-  <div id="wrapper">
-    <nav class="navbar is-dark">
-      <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"><strong>Ceramic Haven</strong></router-link>
-        <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu"
-        @click="showMobileMenu = !showMobileMenu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <router-link to="/log-in" class="button is-light">Log In</router-link>
-              <router-link to="/cart" class="button is-success">
-                <span class="icon"> <i class="fas fa-shopping-cart"></i></span>
-                <span>Cart</span>
-              </router-link>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div id="wrapper" class="wrapper">
+    <nav class="navbar">
+      <the-nav></the-nav>
     </nav>
     <section class="section">
       <router-view :key="$route.path"/>
     </section>
-
     <footer class="footer">
-      <p class="has-text-centered">Muh Mega LEks</p>
+      <p class="has-text-centered">This is the footer.</p>
     </footer>
 
   </div>
@@ -39,7 +16,7 @@
 
 <script>
 import axios from 'axios';
-
+import theNav from "@/components/TheNav";
 export default {
   data() {
     return {
@@ -47,6 +24,9 @@ export default {
       collections: [],
 
     }
+  },
+  components: {
+    theNav
   },
   mounted() {
     this.getCollections()
@@ -67,6 +47,25 @@ export default {
 </script>
 
 <style lang="scss">
+
+
+
+
+.wrapper{
+
+}
+.title{
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.subtitle{
+  font-family: 'Merriweather', serif;
+}
+.display-button{
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
 @import '../node_modules/bulma';
 
 
